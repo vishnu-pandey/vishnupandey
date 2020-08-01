@@ -33,6 +33,7 @@
         }
 
         header{
+            z-index: 5;
             position: fixed;
             width: 100%;
             z-index: 9999;
@@ -113,6 +114,7 @@
             height: 100vh;
             width: 100%;
             background-size: cover;
+            z-index: 2;
         }
 
         #HOME::after{
@@ -122,7 +124,12 @@
             left: 0;
             width: 100%;
             height: 100%;    
-            background-color: rgba(0, 0, 0, 0.24);
+            /* background-color: rgba(0, 0, 0, 0.24); */
+            /* z-index: -99999; */
+            box-shadow: inset 20px 20px 30px rgba(0, 0, 0, 0.911), inset -20px -20px 30px rgba(0, 0, 0, 0.918);
+            /* background: linear-gradient(45deg,rgba(0, 0, 0, 0.904),rgba(0, 0, 0, 0.753)); */
+            background: radial-gradient(rgb(0, 0, 0),rgba(29, 29, 29, 0.904))
+
         }
 
         .intro{
@@ -132,7 +139,9 @@
             transform: translate(-50%,-50%);
             text-align: center;
             font-family: sans-serif;
-            color: rgb(129, 129, 129);
+            /* color: rgb(129, 129, 129); */
+            color: white;
+            z-index: 1;
         }
         .intro h3{
             font-size: 20px;
@@ -151,6 +160,7 @@
 
 
         #ABOUT{
+            z-index: 2;
             position: relative;
             width: 100%;
             margin-top: -200px;
@@ -552,6 +562,36 @@
             
         }
 
+        .mySlides {
+            display: none;
+            background-color: rgba(41, 41, 41, 0.781);
+        }
+
+        .mySlides img{
+            mix-blend-mode: soft-light;
+        }
+
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+          }
+
+        .slideshow-container::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(44, 44, 44, 0.616);
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+          }
+
 
 
         @keyframes fade-up{ 
@@ -582,6 +622,13 @@
 
             }
         }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+          }
+
+          
         
         .anime{
             animation: fade-up 0.7s;
